@@ -1,0 +1,204 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
+
+  --color-cream: #fdf6ee;
+  --color-cream-2: #fbeee0;
+  --color-cream-3: #fbf3e6;
+  --color-card: #fffbf5;
+  --color-line: #f0dfc9;
+
+  --color-marigold: #f2994a;
+  --color-marigold-deep: #e07b29;
+  --color-rose: #d6447e;
+  --color-teal: #2a9d8f;
+  --color-teal-deep: #237f79;
+  --color-gold: #d8b25e;
+  --color-maroon: #b23a48;
+
+  --color-ink: #1a1a1a;
+  --color-ink-warm: #3a2a1e;
+  --color-ink-soft: #4a3722;
+  --color-brown: #8a5a2e;
+  --color-tan: #a9825e;
+  --color-tan-light: #c7b49a;
+}
+
+:root {
+  color-scheme: light;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  overscroll-behavior-y: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+/* ---------- shared festival animations ---------- */
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 153, 74, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 9px rgba(242, 153, 74, 0);
+  }
+}
+
+@keyframes twinkleSoft {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes swayCharm {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+@keyframes pulseHeart {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+@keyframes pulseDot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.94) translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes flicker {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.82;
+    transform: scaleY(0.92);
+  }
+}
+
+@keyframes driftPetal {
+  0% {
+    transform: translate(0, -10%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.8;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translate(var(--drift-x, 30px), 115vh) rotate(220deg);
+    opacity: 0;
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2.2s ease-in-out infinite;
+}
+.animate-twinkleSoft {
+  animation: twinkleSoft 2.6s ease-in-out infinite;
+}
+.animate-spinSlow {
+  animation: spinSlow 9s linear infinite;
+}
+.animate-rotateSlow {
+  animation: rotateSlow 40s linear infinite;
+}
+.animate-swayCharm {
+  animation: swayCharm 3.4s ease-in-out infinite;
+  transform-origin: top center;
+}
+.animate-pulseHeart {
+  animation: pulseHeart 1.7s ease-in-out infinite;
+  transform-origin: center;
+}
+.animate-pulseDot {
+  animation: pulseDot 1.5s ease-in-out infinite;
+}
+.animate-popIn {
+  animation: popIn 0.3s ease-out both;
+}
+.animate-floatSlow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+.animate-flicker {
+  animation: flicker 2.4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
